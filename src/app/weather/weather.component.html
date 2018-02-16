@@ -1,0 +1,20 @@
+<div class="weather-item-info" *ngIf="weather" [class.toggled]="wasClicked">
+    <span class="toggle-btn" (click)="toggleClick()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="location">
+        {{weather.cityName}}
+    </div>
+    <div class="info-now">
+        <span class="icon" [ngClass]="'icon-' + weather.icon"></span>
+        <span class="temperature">
+            <span class="temp-value">{{weather.temp}} <sup>o</sup></span>
+            <span class="temp-unit">C</span>
+        </span>
+        <div class="summary-info">{{weather.summary}}, Humidity {{weather.humidity}}%</div>
+        <div class="summary-more"></div>
+    </div>
+    <!--<weather-map [weather]="this.weather" [class.toggled-map]="wasClicked"></weather-map>-->
+</div>

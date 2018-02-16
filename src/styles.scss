@@ -1,0 +1,22 @@
+* {
+    margin  : 0;
+    padding : 0;
+}
+
+html {height : 100%;}
+
+@font-face {
+    font-family : 'Moon';
+    src         : url('./assets/fonts/Moon.woff') format('woff');
+    font-weight : normal;
+    font-style  : normal;
+}
+
+body {
+    min-height  : 100%;
+    letter-spacing: 7px;
+    font-family : 'Moon', sans-serif;
+    line-height : 1;
+    background  : linear-gradient(to top, #49567F 0%, #1D2951 100%) no-repeat;
+    color       : #FFF;
+}

@@ -1,0 +1,241 @@
+.weather-item-info {
+    padding-top : 24px;
+    text-align  : center;
+    font-size   : 36px;
+
+    &.toggled {
+        .toggle-btn {
+            span {
+                &:nth-child(1) {
+                    margin-bottom : 0;
+                    transform     : rotate(45deg);
+                }
+                &:nth-child(2) { transform : rotate(-45deg); }
+                &:nth-child(3) { opacity : 0; }
+            }
+        }
+        weather-map {
+            left : 0;
+        }
+    }
+
+    weather-map {
+        position   : absolute;
+        width      : 50%;
+        height     : 100%;
+        top        : 0;
+        left       : -100%;
+        transition : all 0.4s ease-in-out;
+    }
+
+    .location {
+        margin-bottom : 12px;
+    }
+
+    .temp-value {
+        font-size : 48px;
+        position  : relative;
+
+        sup {
+            position  : absolute;
+            font-size : 16px;
+            top       : 0;
+            right     : 0;
+        }
+    }
+
+    .summary-info {
+        margin-top : 30px;
+        font-size  : 20px;
+    }
+
+    .icon {
+        display      : inline-block;
+        position     : relative;
+        top          : 6px;
+        margin-right : 16px;
+        height       : 48px;
+        font-size    : 56px;
+    }
+}
+
+.toggle-btn {
+    position : fixed;
+    z-index  : 10;
+    top      : 24px;
+    left     : 24px;
+    cursor   : pointer;
+    span {
+        display       : block;
+        width         : 24px;
+        height        : 1px;
+        background    : #FFF;
+        margin-bottom : 6px;
+        transition    : all 0.4s ease-in-out;
+        &:last-child { margin-bottom : 0; }
+    }
+}
+
+// Icons
+$icomoon-font-path : "../../assets/fonts" !default;
+$icon-01d : "\e900";
+$icon-01n : "\e901";
+$icon-02d : "\e902";
+$icon-02n : "\e903";
+$icon-03d : "\e904";
+$icon-03n : "\e905";
+$icon-04d : "\e906";
+$icon-04n : "\e907";
+$icon-d5 : "\e908";
+$icon-n5 : "\e909";
+$icon-d6 : "\e90a";
+$icon-n6 : "\e90b";
+$icon-d7 : "\e90c";
+$icon-n7 : "\e90d";
+$icon-d8 : "\e90e";
+$icon-n8 : "\e90f";
+$icon-09d : "\e910";
+$icon-d10 : "\e911";
+$icon-n9 : "\e912";
+@font-face {
+    font-family : 'icons';
+    src         : url("#{$icomoon-font-path}/icons.ttf?erdaxe") format('truetype'), url("#{$icomoon-font-path}/icons.woff?erdaxe") format('woff'), url("#{$icomoon-font-path}/icons.svg?erdaxe#icons") format('svg');
+    font-weight : normal;
+    font-style  : normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family             : 'icons' !important;
+    speak                   : none;
+    font-style              : normal;
+    font-weight             : normal;
+    font-variant            : normal;
+    text-transform          : none;
+    line-height             : 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing  : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+}
+
+.icon-01d {
+    &:before {
+        content : $icon-01d;
+    }
+}
+
+.icon-01n {
+    &:before {
+        content : $icon-01n;
+    }
+}
+
+.icon-02d {
+    &:before {
+        content : $icon-02d;
+    }
+}
+
+.icon-02n {
+    &:before {
+        content : $icon-02n;
+    }
+}
+
+.icon-03d {
+    &:before {
+        content : $icon-03d;
+    }
+}
+
+.icon-03n {
+    &:before {
+        content : $icon-03n;
+    }
+}
+
+.icon-d4 {
+    &:before {
+        content : $icon-04d;
+    }
+}
+
+.icon-04n {
+    &:before {
+        content : $icon-04n;
+    }
+}
+
+.icon-d5 {
+    &:before {
+        content : $icon-d5;
+    }
+}
+
+.icon-n5 {
+    &:before {
+        content : $icon-n5;
+    }
+}
+
+.icon-d6 {
+    &:before {
+        content : $icon-d6;
+    }
+}
+
+.icon-n6 {
+    &:before {
+        content : $icon-n6;
+    }
+}
+
+.icon-d7 {
+    &:before {
+        content : $icon-d7;
+    }
+}
+
+.icon-n7 {
+    &:before {
+        content : $icon-n7;
+    }
+}
+
+.icon-d8 {
+    &:before {
+        content : $icon-d8;
+    }
+}
+
+.icon-n8 {
+    &:before {
+        content : $icon-n8;
+    }
+}
+
+.icon-09d {
+    &:before {
+        //content : $icon-09d;
+        content : $icon-d5;
+    }
+}
+
+.icon-d10 {
+    &:before {
+        content : $icon-d10;
+    }
+}
+
+.icon-n9 {
+    &:before {
+        content : $icon-n9;
+    }
+}
+
+.icon-13n {
+    &:before {
+        content : $icon-d8;
+    }
+}

@@ -1,0 +1,95 @@
+@mixin size($width, $height: $width) {
+    width  : $width;
+    height : $height;
+}
+
+weather-cast {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    height          : 100vh;
+}
+
+.stars {
+    position   : absolute;
+    top        : 0;
+    z-index    : -1;
+    @include size(100%);
+    opacity    : 0.64;
+    background : radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow   : hidden;
+
+    div {
+        background       : transparent;
+        border-radius    : 100%;
+        overflow         : hidden;
+        transform-origin : center;
+
+        &:after {
+            content       : " ";
+            position      : absolute;
+            top           : 2000px;
+            background    : transparent;
+            border-radius : 100%;
+            overflow      : hidden;
+        }
+    }
+}
+
+@function multiple-box-shadow ($n) {
+    $value : '#{random(2000)}px #{random(2000)}px #FFF';
+    @for $i from 2 through $n {
+        $value : '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+    }
+    @return unquote($value);
+}
+
+$speed-small : 50s;
+$speed-medium : 100s;
+$speed-big : 150s;
+$shadows-small : multiple-box-shadow(700);
+$shadows-medium : multiple-box-shadow(200);
+$shadows-big : multiple-box-shadow(100);
+
+.stars-1 {
+    @include size(1px);
+    box-shadow : $shadows-small;
+    animation  : animStar $speed-small linear infinite;
+
+    &:after {
+        @include size(1px);
+        box-shadow : $shadows-small;
+    }
+}
+
+.stars-2 {
+    @include size(2px);
+    box-shadow : $shadows-medium;
+    animation  : animStar $speed-medium linear infinite;
+
+    &:after {
+        @include size(2px);
+        box-shadow : $shadows-medium;
+    }
+}
+
+.stars-3 {
+    @include size(3px);
+    box-shadow : $shadows-big;
+    animation  : animStar $speed-big linear infinite;
+
+    &:after {
+        @include size(3px);
+        box-shadow : $shadows-big;
+    }
+}
+
+@keyframes animStar {
+    from {
+        transform : translateY(0px);
+    }
+
+    to {
+         transform: translateY(-2000px);
+    }
+}
