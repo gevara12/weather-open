@@ -39,16 +39,17 @@ export class WeatherMapComponent implements OnInit {
         this.marker.lat = $event.coords.lat;
         this.marker.lng = $event.coords.lng;
         this.weatherService.searchWeatherData(null, this.marker)
-            .subscribe(data => {
-                // debugger;
-                this.weather = {
-                    cityName: data.city.name,
-                    // country: data.sys.country,
-                    temp: data.list[0].main.temp,
-                    summary: data.list[0].weather[0].main,
-                    icon: data.list[0].weather[0].icon
-                };
-            });
+            // .subscribe(data => {
+            //     // debugger;
+            //     this.weather = {
+            //         cityName: data.city.name,
+            //         // country: data.sys.country,
+            //         temp: data.list[0].main.temp,
+            //         summary: data.list[0].weather[0].main,
+            //         icon: data.list[0].weather[0].icon
+            //     };
+            // });
+      ;
         console.log(this.weather);
     }
 
